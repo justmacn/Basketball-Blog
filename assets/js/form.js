@@ -1,39 +1,42 @@
-//Declare global variables from HTML
+//global variables from HTML declared
 const formBtn = document.querySelector('#form-btn');
-const username = document.querySelector('#username').value;
-const title = document.querySelector('#title').value;
+const username = document.querySelector('#username');
+const title = document.querySelector('#title')
 const blog = document.querySelector('#blog');
 const errorMsg = document.querySelector('#form-msg');
+
+//form values declared as an object
+// const blogPost = {
+//     username: username.value.trim(),
+//     title: title.value.trim(),
+//     content: blog.value.trim(),
+// }
 
 
 //TODO - on submit, console log form values
 formBtn.addEventListener('click', function (event) {
-    //prevent event from resetting
+    //prevent submit from resetting
     event.preventDefault()
+    
+    //TODO - on submit, console log form values
     console.log(event);
-    console.log(event.target);
-    //form values declared as object
-    const blogPost = {
-        name: username,
-        title: title,
-        content: blog,
-    }
-//TODO - on submit, feedback for if() no values in form "error"
-    // validation
-    if (username === '') {
-      displayMessage('error', 'Username cannot be blank');
-    } else if (title === '') {
-        displayMessage('error', 'Title cannot be blank');
-    } else if (blog === '') {
+   
+    
+    // error msg displays if values are blank when you click submit
+    if (username.value === '') {
+      displayMessage('error', 'Please enter a username');
+    } else if (title.value === '') {
+        displayMessage('error', 'Please include a title');
+    } else if (blog.value === '') {
         displayMessage('error', 'Blog Post cannot be blank');
     } else {
-        location.href = "../../blog.html"
+    // clicking submit will redirect to blog.html if values are validated
+        location.href = "./blog.html"
     }
       
-    //TODO - on submit, redirect to blog.html
 
 })
-
+console.log(username);
 
 //TODO - create function to display error message
 function displayMessage(type, message) {
