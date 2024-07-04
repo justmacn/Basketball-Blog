@@ -20,10 +20,6 @@ formBtn.addEventListener('click', function (event) {
         title: titleInput.value.trim(),
         content: blogInput.value.trim(),
     };
-
-    // declares the object as a string & logs to console
-    // const blogPost = JSON.stringify(blogContent);
-    // console.log(blogContent);
     
     // if else function call to display error msgs if values are blank when you click submit
     if (username.value === '') {
@@ -34,7 +30,7 @@ formBtn.addEventListener('click', function (event) {
         displayError('error', 'Blog Post cannot be blank');
     } else {
         // clicking submit will redirect to blog.html if values are validated
-        // location.href = "./blog.html"
+        location.href = "./blog.html"
 
         // push blogContent values to blogsStored array 
         blogsStored.push(blogContent);
