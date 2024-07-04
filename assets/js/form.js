@@ -5,16 +5,16 @@ const titleInput = document.querySelector('#title')
 const blogInput = document.querySelector('#blog');
 const errorMsg = document.querySelector('#form-msg');
 
-//form values to be stored in an array
-const blogs = [];
+// this variable initializes an array to store the blog values
+const blogsStored = JSON.parse(localStorage.getItem('blogs')) || [];
 
 
-// an event function that runs when the form is submitted
+// an event function that runs when the blog is submitted
 formBtn.addEventListener('click', function (event) {
-    //prevents form from resetting
+    //prevents blog from resetting
     event.preventDefault()
     
-    // stores form values as object
+    // stores blog values as object
     const blogContent = {
         username: usernameInput.value.trim(),
         title: titleInput.value.trim(),
@@ -25,7 +25,7 @@ formBtn.addEventListener('click', function (event) {
     // const blogPost = JSON.stringify(blogContent);
     // console.log(blogContent);
     
-    // error msg displays if values are blank when you click submit
+    // if else function call to display error msgs if values are blank when you click submit
     if (username.value === '') {
         displayError('error', 'Please enter a username');
     } else if (title.value === '') {
@@ -34,21 +34,21 @@ formBtn.addEventListener('click', function (event) {
         displayError('error', 'Blog Post cannot be blank');
     } else {
         // clicking submit will redirect to blog.html if values are validated
-        location.href = "./blog.html"
+        // location.href = "./blog.html"
 
-        // push blogPost values to blogs array 
-        blogs.push(blogContent);
+        // push blogContent values to blogsStored array 
+        blogsStored.push(blogContent);
 
-        // logs blogInput and stores updated blogs in local storage
-        storedBlogs();
-        console.log(blogs);
+        // function call to update blogsStored array in local storage and log to the console
+        storeBlogs();
+        console.log(blogsStored);
     }
 });
 
 
-// this function stores the blogs array to the local storage for later retrival
-function storedBlogs() {
-    localStorage.setItem('blogs', JSON.stringify(blogs));
+// this function stores the blogsStored array to the local storage for later retrival
+function storeBlogs() {
+    localStorage.setItem('blogs', JSON.stringify(blogsStored));
 }
 
 // this function displays the error msgs when called
