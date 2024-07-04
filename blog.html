@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,42 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/blog.css">
 </head>
+
 <body>
-    <header>
-        <h1 id="blogHeader"> Basketball Blog</h1>
-    </header>
-    
+    <div class="light">
+        <header class="header-container">
+            <h1>BBall Blog</h1>
+            <nav id="mode">
+                <div class="icon">
+                    <button type="button" id="back-btn">Back</button>
+                </div>
+                <div class="icon">
+                    <p>☀️</p>
+                </div>
+                <label class="switch icon">
+                    <input type="checkbox" id="mode-switcher">
+                    <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                    <p>🌙</p>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <ul id="blogs"></ul>
+        </main>
+
+        <footer>
+            <h3>Made by 🤖 Imposters R' Us</h3>
+            <ul>
+                <li><a href="https://justmacn.github.io/Portfolio-v1/">Developer Portfolio</a></li>
+                <li><a href="">BBall Blog</a></li>
+            </ul>
+        </footer>
+    </div>
     <script src="./assets/js/logic.js"></script>
     <script src="./assets/js/blog.js"></script>
 </body>
+
 </html>
