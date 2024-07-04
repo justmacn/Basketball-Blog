@@ -21,27 +21,26 @@ formBtn.addEventListener('click', function (event) {
         content: blogInput.value.trim(),
     };
 
-    // declares the object as a string
-    const blogPost = JSON.stringify(blogContent);
-    
+    // declares the object as a string & logs to console
+    // const blogPost = JSON.stringify(blogContent);
+    // console.log(blogContent);
     
     // error msg displays if values are blank when you click submit
     if (username.value === '') {
-        displayMessage('error', 'Please enter a username');
+        displayError('error', 'Please enter a username');
     } else if (title.value === '') {
-        displayMessage('error', 'Please include a title');
+        displayError('error', 'Please include a title');
     } else if (blog.value === '') {
-        displayMessage('error', 'Blog Post cannot be blank');
+        displayError('error', 'Blog Post cannot be blank');
     } else {
         // clicking submit will redirect to blog.html if values are validated
-        // location.href = "./blog.html"
+        location.href = "./blog.html"
 
         // push blogPost values to blogs array 
-        blogs.push(blogPost);
+        blogs.push(blogContent);
 
         // logs blogInput and stores updated blogs in local storage
         storedBlogs();
-        console.log(blogContent);
         console.log(blogs);
     }
 });
@@ -53,7 +52,7 @@ function storedBlogs() {
 }
 
 // this function displays the error msgs when called
-function displayMessage(type, message) {
+function displayError(type, message) {
     errorMsg.textContent = message;
     errorMsg.setAttribute('class', type)
 }

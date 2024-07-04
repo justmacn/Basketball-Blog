@@ -1,12 +1,36 @@
-console.log('wsup world from the blog');
+// global variables pulled from blog HTML
+const backBtn = document.querySelector('#back-btn');
+const blogList = document.querySelector('#blogs-list');
 
-//TODO - on click, the back button returns me to the first page
+const blogsPosted = [];
+
+// redirects user back to previous webpage
+backBtn.addEventListener('click', function (event) {
+    location.href = "./index.html"
+})
 
 //TODO - retrieve blogs from localStorage
 
-    // create init function to run on open
+// initial function to run on page open
+function init() {
+    // this parses the stored blogs from the localStorage
+    const storedBlogs = JSON.parse(localStorage.getItem('blogs'))
+
+    // if localStorage is not empty, this condition will update the blogs array
+    if (storedBlogs !== null) {
+        blogsPosted = storedBlogs;
+    }
+
+    // this calls the function to display the blogs
+    // displayBlogs();
+    // console.log(blogsPosted);
+}
 
 //TODO - render retrieved blogs on page
 
     // create li elements in a for loop
     // display created li(s)
+
+
+// calls the init function
+init();
