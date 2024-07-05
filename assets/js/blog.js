@@ -2,7 +2,7 @@
 const backBtn = document.querySelector('#back-btn');
 const blogList = document.querySelector('#blogs-list');
 
-const blogsPosted = [];
+let blogsPosted = [];
 
 // redirects user back to previous webpage
 backBtn.addEventListener('click', function (event) {
@@ -13,12 +13,12 @@ backBtn.addEventListener('click', function (event) {
 
 // initial function to run on page open
 function init() {
-    // this parses the stored blogs from the localStorage
-    const storedBlogs = JSON.parse(localStorage.getItem('blogs'))
+    // this parses the stored blogs from the localStorage into an object
+    const storedBlogs = JSON.parse(localStorage.getItem('blogs'));
 
     // if localStorage is not empty, this condition will update the blogs array
     if (storedBlogs !== null) {
-        blogsPosted = storedBlogs;
+      blogsPosted = storedBlogs;
     }
 
     // this calls the function to display the blogs
