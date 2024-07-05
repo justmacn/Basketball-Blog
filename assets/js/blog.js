@@ -23,7 +23,7 @@ function init() {
 
     // this calls the function to display the blogs
     // displayBlogs();
-    // console.log(blogsPosted);
+    console.log(blogsPosted);
 }
 
 //TODO - render retrieved blogs on page
