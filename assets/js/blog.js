@@ -32,19 +32,23 @@ function displayBlogs() {
     // this method will clear the ul element before appending our new ones
     blogList.innerHTML = '';
 
-    // for loop creates li elements out of every array index
-    for (let i = 0; i < blogsPosted.length; i++) {
-        const blog = blogsPosted[i];
-    
-        const blogLi = document.createElement('li');
-        blogLi.textContent = `${blog.title} \n${blog.content} \n${blog.username}`;
-        blogLi.setAttribute('data-index', i);
+    // method generates an array for each blogs array item in template literal to include style formatting
+    const blogLi = blogsPosted.map((blog, index) => {
+        return `<li data-index="${index}">
+                    <span id="blog-title">${blog.title}</span><br>
+                    <span id="blog-content">${blog.content}</span><br>
+                    <span id="blog-user">Posted by: ${blog.username}</span><br>
+                </li>`;
+    });
     
         // method will append the created li elements to the parent ul blogList
-        blogList.appendChild(blogLi);
-      }
+        blogLi.forEach((blogPost) => {
+            const li = document.createElement('li');
+            // allows the html code in the blogLi template literal to be read properly
+            li.innerHTML = blogPost;
+            blogList.appendChild(li);
+        });
 };
-
 
 
 // calls the init function
