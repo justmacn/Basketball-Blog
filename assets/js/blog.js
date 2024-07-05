@@ -4,12 +4,12 @@ const blogList = document.querySelector('#blogs-list');
 
 let blogsPosted = [];
 
+
 // redirects user back to previous webpage
 backBtn.addEventListener('click', function (event) {
     location.href = "./index.html"
-})
+});
 
-//TODO - retrieve blogs from localStorage
 
 // initial function to run on page open
 function init() {
@@ -22,14 +22,29 @@ function init() {
     }
 
     // this calls the function to display the blogs
-    // displayBlogs();
+    displayBlogs();
     console.log(blogsPosted);
-}
+};
 
-//TODO - render retrieved blogs on page
 
-    // create li elements in a for loop
-    // display created li(s)
+// function that converts the retrieved blogs array into li elements by index
+function displayBlogs() {
+    // this method will clear the ul element before appending our new ones
+    blogList.innerHTML = '';
+
+    // for loop creates li elements out of every array index
+    for (let i = 0; i < blogsPosted.length; i++) {
+        const blog = blogsPosted[i];
+    
+        const blogLi = document.createElement('li');
+        blogLi.textContent = `${blog.title} \n${blog.content} \n${blog.username}`;
+        blogLi.setAttribute('data-index', i);
+    
+        // method will append the created li elements to the parent ul blogList
+        blogList.appendChild(blogLi);
+      }
+};
+
 
 
 // calls the init function
