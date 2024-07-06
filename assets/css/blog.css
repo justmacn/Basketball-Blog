@@ -1,22 +1,6 @@
 /* THIS SECTION STYLES AND ARRANGES HEADER ELEMENTS */
 
-/* wraps header in a flex box */
-.header-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 4rem;
-    border-bottom: 3px solid black;
-    padding: 0.25rem;
-}
-
-h1 {
-    padding-left: 1.5rem;
-}
-
 /* style the back button before and during hover */
-
 /* light mode  */
 .light #back-btn {
     margin-right: 2rem;
@@ -57,14 +41,14 @@ h1 {
 /* THIS SECTION CREATES CARDS AROUND EACH BLOG POST */
 
 /* place flex box around the ul and set to column */
-.blogs-container {
+/* light mode */
+.light .blogs-container {
     display: flex;
     flex-direction: column;
     border-top: 3px solid black;
     margin-top: 0.25rem;
 }
 
-/* light mode */
 .light .blogs-container #blog-li {
     margin: 1rem 0;
     border: 2px solid black;
@@ -74,9 +58,17 @@ h1 {
 }
 
 /* dark mode */
+.dark .blogs-container {
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid white;
+    margin-top: 0.25rem;
+}
+
 .dark .blogs-container #blog-li {
-    margin: 1rem;
+    margin: 1rem 0;
     border: 2px solid white;
     list-style: none;
     max-width: 90%;
+    border-radius: 0.25rem;
 }

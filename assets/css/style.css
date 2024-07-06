@@ -1,9 +1,54 @@
-/* THIS SECTION STYLES AND ARRANGES UNIVERSAL HEADER ELEMENTS */
+/* THIS SECTION STYLES THE BODY AND UNIVERSAL COLOR MODE */
 
 /* This removes the page's border */
 body {
     margin: 0;
 }
+
+/* light Mode */
+.light {
+    background-color: white;
+    color: black;
+    height: 100vh;
+}
+
+/* dark Mode */
+.dark {
+    background-color: black;
+    color: white;
+    height: 100vh;
+   
+  }
+
+
+/* THIS SECTION STYLES AND ARRANGES UNIVERSAL HEADER ELEMENTS */
+
+/* light mode */
+.light .header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    border-bottom: 3px solid black;
+    padding: 0.25rem;
+}
+
+/* dark mode */
+.dark .header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    border-bottom: 3px solid white;
+    padding: 0.25rem;
+}
+
+h1 {
+    padding-left: 1.5rem;
+}
+
 
 /* arrange page header using flex box */
 .mode {
@@ -23,5 +68,85 @@ body {
     font-size: 1.10rem;
 }
 
+/* THIS SECTION STYLES THE MAIN SECTION */
+
+/* place row flex box around img and form */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 
+/* THIS SECTION STYLES THE COLOR MODE SLIDER */
+
+/* Styling the Switch button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    left: 2.5%;
+    top: 20.5%
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 8px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  
+  input:checked + .slider {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px rgb(255, 255, 255);
+  }
+  
+  input:checked + .slider:before {
+    background-color: black;
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 28px;
+    height: 1.1rem;
+    width: 3rem;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  
