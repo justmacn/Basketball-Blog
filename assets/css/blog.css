@@ -1,3 +1,5 @@
+/* THIS SECTION STYLES AND ARRANGES HEADER ELEMENTS */
+
 /* wraps header in a flex box */
 .header-container {
     display: flex;
@@ -5,8 +7,76 @@
     justify-content: space-between;
     align-items: center;
     height: 4rem;
+    border-bottom: 3px solid black;
+    padding: 0.25rem;
 }
 
 h1 {
     padding-left: 1.5rem;
+}
+
+/* style the back button before and during hover */
+
+/* light mode  */
+.light #back-btn {
+    margin-right: 2rem;
+    padding: 0.6rem 1.95rem;
+    font-size: 0.75rem;
+    border-radius: 0.15rem;
+    background-color: black;
+    color: white;
+}
+
+.light #back-btn:hover {
+    box-shadow: 2px 2px 3px white;
+    background-color: white;
+    color: black;
+    border: 1.5px solid black;
+    
+}
+
+/* dark mode */
+.dark #back-btn {
+    margin-right: 2rem;
+    padding: 0.6rem 1.95rem;
+    font-size: 0.75rem;
+    border-radius: 0.15rem;
+    background-color: white;
+    color: black;
+}
+
+.dark #back-btn:hover {
+    box-shadow: 2px 2px 3px black;
+    background-color: black;
+    color: white;
+    border: 1.5px solid white;
+    
+}
+
+
+/* THIS SECTION CREATES CARDS AROUND EACH BLOG POST */
+
+/* place flex box around the ul and set to column */
+.blogs-container {
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid black;
+    margin-top: 0.25rem;
+}
+
+/* light mode */
+.light .blogs-container #blog-li {
+    margin: 1rem 0;
+    border: 2px solid black;
+    list-style-type: none;
+    border-radius: 0.25rem;
+    max-width: 90%;
+}
+
+/* dark mode */
+.dark .blogs-container #blog-li {
+    margin: 1rem;
+    border: 2px solid white;
+    list-style: none;
+    max-width: 90%;
 }

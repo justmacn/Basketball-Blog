@@ -1,4 +1,11 @@
-/* arrange page header using flex box on  */
+/* THIS SECTION STYLES AND ARRANGES UNIVERSAL HEADER ELEMENTS */
+
+/* This removes the page's border */
+body {
+    margin: 0;
+}
+
+/* arrange page header using flex box */
 .mode {
     display: flex;
     flex-direction: row;
@@ -9,3 +16,12 @@
     height: 2rem;
     
 }
+
+/* arrange navbar items */
+.icon {
+    margin: 0 0.40rem;
+    font-size: 1.10rem;
+}
+
+
+

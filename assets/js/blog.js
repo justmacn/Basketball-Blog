@@ -1,6 +1,6 @@
 // global variables pulled from blog HTML
 const backBtn = document.querySelector('#back-btn');
-const blogList = document.querySelector('#blogs-list');
+const blogList = document.querySelector('.blogs-container');
 
 let blogsPosted = [];
 
@@ -46,6 +46,7 @@ function displayBlogs() {
             const li = document.createElement('li');
             // allows the html code in the blogLi template literal to be read properly
             li.innerHTML = blogPost;
+            li.setAttribute('id', 'blog-li')
             blogList.appendChild(li);
         });
 };
